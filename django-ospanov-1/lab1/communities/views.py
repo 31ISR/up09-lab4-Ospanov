@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from .models import Community
 
-# Create your views here.
+def communities(request):
+  communities = Community.objects.all().order_by('-date')
+  return render(request, 'communities/commu.html', {'communities': communities})
 
-def communities(req):
-  return render(req, 'communities/commu.html')

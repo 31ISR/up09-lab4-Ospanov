@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{% block title %} Приложение Django {% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-        <script src="{% static 'js/main.js' %}" defer></script>
+        <script src="{% static 'js/script.js' %}" defer></script>
     </head>
     <body>
       <nav>
         <ul>
           <li><a href="/">Главная старица</a></li>
           <li><a href="/about">Обо мне</a></li>
-          <li><a href="/post">Посты</a></li>
-          <li><a href="/communities">Группы</a></li>
+          <li><a href="{% url 'posts' %}">Посты</a></li>
+          <li><a href="{% url 'communities' %}">Группы</a></li>
         </ul>
       </nav>
       
