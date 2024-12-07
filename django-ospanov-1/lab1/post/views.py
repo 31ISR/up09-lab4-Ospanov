@@ -10,4 +10,4 @@ def post_list(request):
 
 def post_page(request, slug):
     post = Post.objects.get(slug=slug)
-    return render(request, 'posts/post_page.html', {'post': post})
+    return render(request, 'post/post_page.html', {'post': post})

@@ -5,7 +5,9 @@
     
         {% for community in communities %}
         <article class="community">
-            <h2>{{ community.name }}</h2>
+            <h2>
+                <a href="{%  url 'communities:page' slug=community.slug %}"> {{ community.name }} </a>
+            </h2>
             <p>{{ community.description }}</p>
             <p>{{ community.date }}</p>
         </article>
