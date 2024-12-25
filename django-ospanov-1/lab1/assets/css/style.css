@@ -95,6 +95,8 @@ textarea:not([rows]) {
     --logout_hover-color: #a13333; /* кнопка выхода */
     --logout-color: #8f2c2c; 
     --post-background-color: #242424; /* Цвет фона постов (темно-серый) */
+    --users_error-color: #ff4444; /* цвет ошибки (красный) */
+
 }
 
 
@@ -103,7 +105,7 @@ body {
 }
 nav {
     color: var(--text-color);
-    background-color: var(--nav-color);
+    background-color: rgba(255, 255, 255, 0.05);
     width: 250px;
     min-height: 100vh;
     padding: 2rem;
@@ -138,7 +140,6 @@ nav ul a:hover {
 nav ul .new {
     background-color: var(--accent-color);
     margin-top: 1rem;
-    text-align: center;
 }
 
 nav ul .new:hover {
@@ -261,4 +262,169 @@ main {
 .communities h1 {
     margin-left: 1rem;
     margin-bottom: 1rem;
+}
+
+/* стили для авторизации */
+.form-with-validation {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--post-background-color);
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+.form-with-validation label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.form-with-validation input {
+    width: 95%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
+
+.form-with-validation input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(44, 90, 143, 0.3);
+}
+
+.form-submit {
+    width: 95%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #366eaf;
+}
+
+/* Стили для заголовка формы */
+.h1-users {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Дополнительные стили для формы регистрации */
+.form-with-validation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    color: var(--users_error-color);
+    font-size: 1.4rem;
+}
+
+.form-with-validation .helptext {
+    display: block;
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Специальные стили для полей с ошибками */
+.form-with-validation .errorlist {
+    color: var(--users_error-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-with-validation input.error {
+    border-color: var(--users_error-color);
+}
+
+/* дополнительные стили к форме создания */
+
+textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 95%;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(44, 90, 143, 0.3);
+}
+
+
+/* стили для постов и сообществ */
+
+
+.post_page, .communities_page {
+    background-color: var(--post-background-color);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem;
+    color: var(--text-color);
+    max-width: 1200px;
+}
+
+.post_page h1, .communities_page h1 {
+    font-size: 3.2rem;
+    margin: 1.5rem 0;
+    color: var(--primary-color);
+}
+
+.post_page .banner, .communities_page .avatar {
+    width: 30%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.post_page p, .communities_page p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.post_page-author , .communities_page-author {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-top: 3rem;
+}
+
+.post_page .date, .communities_page .date {
+    color: #666;
+    font-size: 1.4rem;
+}
+
+
+
+/* svg картинки */
+
+ul a svg {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.logout button {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 0 auto;
+}
+
+.logout button svg {
+    margin-right: 0.5rem;
 }

@@ -3,8 +3,8 @@
 <section class="post_page">
     <img class="banner" src="{{ post.banner.url }}" alt="{{ post.title }}" />
     <h1>{{ post.title }}</h1>
-    <p>{{ post.date }}</p>
     <p>{{ post.body }}</p>
-    <p>пост от {{ post.author }}</p>
+    <p class="post_page-author">пост от {{ post.author }}</p>
+    <p class="date">{{ post.date }}</p>
 </section>
 {% endblock %}

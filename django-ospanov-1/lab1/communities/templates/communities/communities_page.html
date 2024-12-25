@@ -1,10 +1,10 @@
 {% extends 'layout.html' %} {% block title %} {{ community.title }} {% endblock %}
 {% block content %}
-<section>
+<section class="communities_page">
     <img class="avatar" src="{{ community.avatar.url }}" alt="{{ community.title }}" />
     <h1>{{ community.name }}</h1>
-    <p>{{ community.date }}</p>
     <p>{{ community.description }}</p>
-    <p>Сообщество созданно {{ community.author }}</p>
+    <p class="communities_page-author">Сообщество созданно {{ community.author }}</p>
+    <p class="date">{{ community.date }}</p>
 </section>
 {% endblock %}
