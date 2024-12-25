@@ -1,0 +1,430 @@
+/* CSS variable example */
+:root { --variable: value; }
+
+/* Box sizing rules */ 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-size: 62.5%;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  background-color: var(--background-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+
+:root {
+    --primary-color: #2c5a8f; /* Основной цвет (темно-синий) */
+    --secondary-color: #6c3981; /* Вторичный цвет (темный фиолетовый) */
+    --accent-color: #1b7a43; /* Акцентный цвет (темно-зеленый) */
+    --background-color: #1a1a1a; /* Цвет фона (темно-серый) */
+    --text-color: #e0e0e0; /* Цвет текста (светло-серый) */
+    --link-color: #2171b5; /* Цвет ссылок (темно-синий) */
+    --border-color: #333333; /* Цвет границ (темно-серый) */
+    --nav-color: #1c2833; /* Цвет навигации (очень темный сине-серый) */
+    --logout_hover-color: #a13333; /* кнопка выхода */
+    --logout-color: #8f2c2c; 
+    --post-background-color: #242424; /* Цвет фона постов (темно-серый) */
+    --users_error-color: #ff4444; /* цвет ошибки (красный) */
+
+}
+
+
+body {
+    display: flex;
+}
+nav {
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 250px;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1rem;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+nav ul a {
+    background-color: rgba(255, 255, 255, 0.034);
+
+}
+
+nav ul a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+nav ul .new {
+    background-color: var(--accent-color);
+    margin-top: 1rem;
+}
+
+nav ul .new:hover {
+    background-color: #238c4f;
+    transform: translateX(5px);
+}
+
+nav form.logout {
+    margin-top: 2rem;
+}
+
+nav form.logout button {
+    width: 92%;
+    padding: 1rem;
+    background-color: var(--logout-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav form.logout button:hover {
+    background-color: var(--logout_hover-color);
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+}
+
+
+
+
+/* оформление главной страницы  */
+/* стили обо мне */
+.home {
+    color: var(--text-color);
+    max-width: 800px;
+
+    padding: 2rem;
+}
+
+.home h1 {
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home h2 {
+    font-size: 2.4rem;
+    margin: 3rem 0 1.5rem;
+    color: var(--secondary-color);
+}
+
+.home p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.home ul {
+    list-style: none;
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+.home ul li {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.home ul li::before {
+    content: "- ";
+}
+
+
+
+/* стили для постов */
+/* стили для communities */
+
+.post {
+    background-color: var(--post-background-color);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    padding: 15px;
+}
+
+.post-author {
+    color: var(--primary-color);
+}
+
+.post_list {
+    color: var(--text-color);
+}
+
+.post_list-h1 {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-date {
+    color: #4e4e4e;
+}
+
+.post a {
+    text-decoration: none;
+    color: var(--secondary-color);
+
+}
+
+.communities {
+    color: var(--text-color);
+}
+
+.communities h1 {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* стили для авторизации */
+.form-with-validation {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--post-background-color);
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+.form-with-validation label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.form-with-validation input {
+    width: 95%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+}
+
+.form-with-validation input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(44, 90, 143, 0.3);
+}
+
+.form-submit {
+    width: 95%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #366eaf;
+}
+
+/* Стили для заголовка формы */
+.h1-users {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Дополнительные стили для формы регистрации */
+.form-with-validation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    color: var(--users_error-color);
+    font-size: 1.4rem;
+}
+
+.form-with-validation .helptext {
+    display: block;
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Специальные стили для полей с ошибками */
+.form-with-validation .errorlist {
+    color: var(--users_error-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-with-validation input.error {
+    border-color: var(--users_error-color);
+}
+
+/* дополнительные стили к форме создания */
+
+textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 95%;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(44, 90, 143, 0.3);
+}
+
+
+/* стили для постов и сообществ */
+
+
+.post_page, .communities_page {
+    background-color: var(--post-background-color);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem;
+    color: var(--text-color);
+    max-width: 1200px;
+}
+
+.post_page h1, .communities_page h1 {
+    font-size: 3.2rem;
+    margin: 1.5rem 0;
+    color: var(--primary-color);
+}
+
+.post_page .banner, .communities_page .avatar {
+    width: 30%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.post_page p, .communities_page p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.post_page-author , .communities_page-author {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-top: 3rem;
+}
+
+.post_page .date, .communities_page .date {
+    color: #666;
+    font-size: 1.4rem;
+}
+
+
+
+/* svg картинки */
+
+ul a svg {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.logout button {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 0 auto;
+}
+
+.logout button svg {
+    margin-right: 0.5rem;
+}
